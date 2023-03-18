@@ -25,3 +25,21 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## How it works…
+BehaviorSubject is a special type of Observable that requires an initial value
+and can be used by many subscribers. In this recipe, we create a BehaviorSubject
+and then create an Observable using the .asObservable() method on
+BehaviorSubject. Although we could've just used BehaviorSubject, using the
+.asObservable() approach is recommended by the community.
+Once we have created the Observable named count$ in NotificationsService, we
+inject NotificationsService in our components and assign the count$ Observable
+to a local property of the components. Then, we subscribe to this local property (which is
+an Observable) directly in NotificationsButtonComponent's template (html) and
+in NotificationsManagerComponent's template using the async pipes.
+Then, whenever we need to update the value of the count$ Observable, we use
+the setCount method of NotificationsService to update the actual
+BehaviorSubject's value by using the .next() method on it. This automatically
+emits this new value via the count$ Observable and updates the view with the new
+value in both of the components.
