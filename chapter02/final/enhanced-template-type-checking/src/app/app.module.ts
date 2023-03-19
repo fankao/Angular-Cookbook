@@ -17,6 +17,9 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   providers: [],
+  exports: [
+    HighlightDirective
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
