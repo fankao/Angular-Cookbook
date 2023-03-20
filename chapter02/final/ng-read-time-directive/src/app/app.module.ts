@@ -15,6 +15,9 @@ import { ReadTimeDirective } from './directives/read-time.directive';
     AppRoutingModule
   ],
   providers: [],
+  exports: [
+    ReadTimeDirective
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
